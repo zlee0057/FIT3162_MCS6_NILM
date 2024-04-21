@@ -1,0 +1,40 @@
+............  mae  ..............
+                                     Seq2Seq  Seq2SPoint
+fridge                            218.267563  257.440369
+air conditioner                   247.265091  305.730774
+washing machine                   184.014221  237.315567
+tumble dryer                      112.196281  124.254410
+kettle                            522.145569  475.918701
+vacuum cleaner                     27.929668   33.411053
+electric water heating appliance  117.209587  329.209869
+oven                               18.229086   17.408333
+............  rmse  ..............
+                                     Seq2Seq  Seq2SPoint
+fridge                            410.694058  535.533321
+air conditioner                   892.578253  864.835967
+washing machine                   539.201319  841.504791
+tumble dryer                      441.745190  441.117827
+kettle                            835.348580  890.706286
+vacuum cleaner                     53.817440   52.829675
+electric water heating appliance  166.577679  369.054493
+oven                               27.933983   26.445871
+............  f1score  ..............
+                                   Seq2Seq  Seq2SPoint
+fridge                            0.451163    0.619440
+air conditioner                   0.078818    0.125000
+washing machine                   0.076613    0.155738
+tumble dryer                      0.335025    0.119816
+kettle                            0.636583    0.842230
+vacuum cleaner                    0.070686    0.181609
+electric water heating appliance  0.000000    0.000000
+oven                              0.255390    0.390999
+............  nde  ..............
+                                   Seq2Seq  Seq2SPoint
+fridge                            0.752865    0.981714
+air conditioner                   0.995503    0.964562
+washing machine                   1.785186    2.786052
+tumble dryer                      0.990496    0.989089
+kettle                            0.505637    0.539145
+vacuum cleaner                    0.999630    0.981283
+electric water heating appliance       inf         inf
+oven                              0.985830    0.933312
