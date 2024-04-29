@@ -1,0 +1,40 @@
+............  mae  ..............
+                                     Seq2Seq   Seq2Point
+fridge                             31.569170   33.730221
+air conditioner                   146.561981  150.929260
+washing machine                    21.400229   19.313225
+tumble dryer                      229.827087  251.011475
+kettle                            202.889786  205.379547
+vacuum cleaner                    116.284904  112.699532
+electric water heating appliance  254.255997  256.101227
+oven                              244.910004  250.377411
+............  rmse  ..............
+                                     Seq2Seq   Seq2Point
+fridge                             54.832716   55.654087
+air conditioner                   341.683447  490.238685
+washing machine                    32.488191   30.663378
+tumble dryer                      520.635999  612.495791
+kettle                            561.392799  634.871050
+vacuum cleaner                    439.628927  416.590514
+electric water heating appliance  890.496491  895.641355
+oven                              611.072444  663.729708
+............  f1score  ..............
+                                   Seq2Seq  Seq2Point
+fridge                            0.078908   0.069727
+air conditioner                   0.000000   0.000000
+washing machine                   0.392903   0.372155
+tumble dryer                      0.367211   0.355580
+kettle                            0.166051   0.179203
+vacuum cleaner                    0.070276   0.073180
+electric water heating appliance  0.108142   0.065777
+oven                              0.100623   0.142382
+............  nde  ..............
+                                   Seq2Seq  Seq2Point
+fridge                            1.012517   1.027684
+air conditioner                        inf        inf
+washing machine                   1.017055   0.959928
+tumble dryer                      0.903038   1.062367
+kettle                            1.849002   2.091010
+vacuum cleaner                    0.972662   0.921691
+electric water heating appliance  0.977785   0.983434
+oven                              1.043730   1.133670
