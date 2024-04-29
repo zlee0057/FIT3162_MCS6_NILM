@@ -1,0 +1,1666 @@
+{
+    "1": {
+        "199": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 31.56917,
+                    "Seq2Point": 33.730221
+                },
+                "air conditioner": {
+                    "Seq2Seq": 146.561981,
+                    "Seq2Point": 150.92926
+                },
+                "washing machine": {
+                    "Seq2Seq": 21.400229,
+                    "Seq2Point": 19.313225
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 229.827087,
+                    "Seq2Point": 251.011475
+                },
+                "kettle": {
+                    "Seq2Seq": 202.889786,
+                    "Seq2Point": 205.379547
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 116.284904,
+                    "Seq2Point": 112.699532
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 254.255997,
+                    "Seq2Point": 256.101227
+                },
+                "oven": {
+                    "Seq2Seq": 244.910004,
+                    "Seq2Point": 250.377411
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 54.832716,
+                    "Seq2Point": 55.654087
+                },
+                "air conditioner": {
+                    "Seq2Seq": 341.683447,
+                    "Seq2Point": 490.238685
+                },
+                "washing machine": {
+                    "Seq2Seq": 32.488191,
+                    "Seq2Point": 30.663378
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 520.635999,
+                    "Seq2Point": 612.495791
+                },
+                "kettle": {
+                    "Seq2Seq": 561.392799,
+                    "Seq2Point": 634.87105
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 439.628927,
+                    "Seq2Point": 416.590514
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 890.496491,
+                    "Seq2Point": 895.641355
+                },
+                "oven": {
+                    "Seq2Seq": 611.072444,
+                    "Seq2Point": 663.729708
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.078908,
+                    "Seq2Point": 0.069727
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.392903,
+                    "Seq2Point": 0.372155
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.367211,
+                    "Seq2Point": 0.35558
+                },
+                "kettle": {
+                    "Seq2Seq": 0.166051,
+                    "Seq2Point": 0.179203
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.070276,
+                    "Seq2Point": 0.07318
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.108142,
+                    "Seq2Point": 0.065777
+                },
+                "oven": {
+                    "Seq2Seq": 0.100623,
+                    "Seq2Point": 0.142382
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.012517,
+                    "Seq2Point": 1.027684
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.017055,
+                    "Seq2Point": 0.959928
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.903038,
+                    "Seq2Point": 1.062367
+                },
+                "kettle": {
+                    "Seq2Seq": 1.849002,
+                    "Seq2Point": 2.09101
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.972662,
+                    "Seq2Point": 0.921691
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.977785,
+                    "Seq2Point": 0.983434
+                },
+                "oven": {
+                    "Seq2Seq": 1.04373,
+                    "Seq2Point": 1.13367
+                }
+            }
+        },
+        "599": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 31.638161,
+                    "Seq2Point": 30.467489
+                },
+                "air conditioner": {
+                    "Seq2Seq": 142.651367,
+                    "Seq2Point": 123.842072
+                },
+                "washing machine": {
+                    "Seq2Seq": 18.826923,
+                    "Seq2Point": 21.205227
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 230.701752,
+                    "Seq2Point": 207.379364
+                },
+                "kettle": {
+                    "Seq2Seq": 186.107071,
+                    "Seq2Point": 178.92067
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 124.76458,
+                    "Seq2Point": 117.523674
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 268.321075,
+                    "Seq2Point": 292.387299
+                },
+                "oven": {
+                    "Seq2Seq": 260.967957,
+                    "Seq2Point": 298.576477
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 56.494011,
+                    "Seq2Point": 54.037799
+                },
+                "air conditioner": {
+                    "Seq2Seq": 328.111309,
+                    "Seq2Point": 374.085113
+                },
+                "washing machine": {
+                    "Seq2Seq": 31.476765,
+                    "Seq2Point": 33.445646
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 503.887388,
+                    "Seq2Point": 590.836854
+                },
+                "kettle": {
+                    "Seq2Seq": 491.897109,
+                    "Seq2Point": 592.853955
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 449.93668,
+                    "Seq2Point": 455.688713
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 918.138368,
+                    "Seq2Point": 974.616463
+                },
+                "oven": {
+                    "Seq2Seq": 649.725278,
+                    "Seq2Point": 705.591286
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.125924
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.363661,
+                    "Seq2Point": 0.33112
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.376966,
+                    "Seq2Point": 0.683179
+                },
+                "kettle": {
+                    "Seq2Seq": 0.144091,
+                    "Seq2Point": 0.178402
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.212756,
+                    "Seq2Point": 0.253769
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.084569,
+                    "Seq2Point": 0.085997
+                },
+                "oven": {
+                    "Seq2Seq": 0.072914,
+                    "Seq2Point": 0.092358
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.043193,
+                    "Seq2Point": 0.997838
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.985392,
+                    "Seq2Point": 1.047028
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.873987,
+                    "Seq2Point": 1.0248
+                },
+                "kettle": {
+                    "Seq2Seq": 1.620111,
+                    "Seq2Point": 1.952622
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.995468,
+                    "Seq2Point": 1.008194
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.008136,
+                    "Seq2Point": 1.07015
+                },
+                "oven": {
+                    "Seq2Seq": 1.10975,
+                    "Seq2Point": 1.205171
+                }
+            }
+        },
+        "99": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 31.727028,
+                    "Seq2Point": 32.681736
+                },
+                "air conditioner": {
+                    "Seq2Seq": 112.017174,
+                    "Seq2Point": 122.50576
+                },
+                "washing machine": {
+                    "Seq2Seq": 20.405577,
+                    "Seq2Point": 20.976786
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 202.990967,
+                    "Seq2Point": 232.032822
+                },
+                "kettle": {
+                    "Seq2Seq": 180.190659,
+                    "Seq2Point": 220.897614
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 141.90213,
+                    "Seq2Point": 138.513306
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 245.527298,
+                    "Seq2Point": 245.213242
+                },
+                "oven": {
+                    "Seq2Seq": 250.828598,
+                    "Seq2Point": 227.083603
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 54.841132,
+                    "Seq2Point": 53.909096
+                },
+                "air conditioner": {
+                    "Seq2Seq": 285.513805,
+                    "Seq2Point": 360.221948
+                },
+                "washing machine": {
+                    "Seq2Seq": 31.802981,
+                    "Seq2Point": 33.234112
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 516.878401,
+                    "Seq2Point": 514.511601
+                },
+                "kettle": {
+                    "Seq2Seq": 567.019124,
+                    "Seq2Point": 646.392586
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 476.558135,
+                    "Seq2Point": 447.399448
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 852.107021,
+                    "Seq2Point": 858.824269
+                },
+                "oven": {
+                    "Seq2Seq": 589.727638,
+                    "Seq2Point": 595.795818
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.081052,
+                    "Seq2Point": 0.107429
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.361097,
+                    "Seq2Point": 0.361427
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.750316,
+                    "Seq2Point": 0.369373
+                },
+                "kettle": {
+                    "Seq2Seq": 0.12925,
+                    "Seq2Point": 0.164545
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.060239,
+                    "Seq2Point": 0.060219
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.10911,
+                    "Seq2Point": 0.089949
+                },
+                "oven": {
+                    "Seq2Seq": 0.122743,
+                    "Seq2Point": 0.072977
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.012672,
+                    "Seq2Point": 0.995461
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.995604,
+                    "Seq2Point": 1.040406
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.89652,
+                    "Seq2Point": 0.892415
+                },
+                "kettle": {
+                    "Seq2Seq": 1.867533,
+                    "Seq2Point": 2.128957
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 1.054367,
+                    "Seq2Point": 0.989854
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.935632,
+                    "Seq2Point": 0.943008
+                },
+                "oven": {
+                    "Seq2Seq": 1.007272,
+                    "Seq2Point": 1.017637
+                }
+            }
+        }
+    },
+    "30": {
+        "199": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 21.789297,
+                    "Seq2Point": 27.737207
+                },
+                "air conditioner": {
+                    "Seq2Seq": 207.483368,
+                    "Seq2Point": 294.501923
+                },
+                "washing machine": {
+                    "Seq2Seq": 20.751562,
+                    "Seq2Point": 18.643671
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 294.352295,
+                    "Seq2Point": 547.724182
+                },
+                "kettle": {
+                    "Seq2Seq": 148.433838,
+                    "Seq2Point": 166.279602
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 120.09594,
+                    "Seq2Point": 148.858078
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 264.39975,
+                    "Seq2Point": 264.388062
+                },
+                "oven": {
+                    "Seq2Seq": 196.522812,
+                    "Seq2Point": 227.344269
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 53.171117,
+                    "Seq2Point": 51.156169
+                },
+                "air conditioner": {
+                    "Seq2Seq": 340.432595,
+                    "Seq2Point": 491.386734
+                },
+                "washing machine": {
+                    "Seq2Seq": 30.315639,
+                    "Seq2Point": 26.562552
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 519.802487,
+                    "Seq2Point": 785.349564
+                },
+                "kettle": {
+                    "Seq2Seq": 376.708276,
+                    "Seq2Point": 311.760939
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 433.07469,
+                    "Seq2Point": 437.630873
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 867.598734,
+                    "Seq2Point": 875.391055
+                },
+                "oven": {
+                    "Seq2Seq": 552.539931,
+                    "Seq2Point": 565.568326
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.184932
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.255443,
+                    "Seq2Point": 0.293963
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.455607,
+                    "Seq2Point": 0.371429
+                },
+                "kettle": {
+                    "Seq2Seq": 0.079332,
+                    "Seq2Point": 0.043478
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.204724,
+                    "Seq2Point": 0.114664
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.149254,
+                    "Seq2Point": 0.132626
+                },
+                "oven": {
+                    "Seq2Seq": 0.204929,
+                    "Seq2Point": 0.169165
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 0.987625,
+                    "Seq2Point": 0.950198
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.069882,
+                    "Seq2Point": 0.93743
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.952877,
+                    "Seq2Point": 1.439666
+                },
+                "kettle": {
+                    "Seq2Seq": 1.247205,
+                    "Seq2Point": 1.032177
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.971054,
+                    "Seq2Point": 0.98127
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.967643,
+                    "Seq2Point": 0.976334
+                },
+                "oven": {
+                    "Seq2Seq": 0.947902,
+                    "Seq2Point": 0.970253
+                }
+            }
+        },
+        "599": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 23.190315,
+                    "Seq2Point": 28.172848
+                },
+                "air conditioner": {
+                    "Seq2Seq": 354.024994,
+                    "Seq2Point": 204.460678
+                },
+                "washing machine": {
+                    "Seq2Seq": 17.557499,
+                    "Seq2Point": 20.582401
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 411.410461,
+                    "Seq2Point": 359.146057
+                },
+                "kettle": {
+                    "Seq2Seq": 43.762157,
+                    "Seq2Point": 124.007782
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 106.714966,
+                    "Seq2Point": 120.784103
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 237.721405,
+                    "Seq2Point": 269.421967
+                },
+                "oven": {
+                    "Seq2Seq": 157.590454,
+                    "Seq2Point": 213.991013
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 51.646487,
+                    "Seq2Point": 50.965476
+                },
+                "air conditioner": {
+                    "Seq2Seq": 393.92988,
+                    "Seq2Point": 291.073337
+                },
+                "washing machine": {
+                    "Seq2Seq": 29.21961,
+                    "Seq2Point": 26.375876
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 583.697267,
+                    "Seq2Point": 514.010883
+                },
+                "kettle": {
+                    "Seq2Seq": 297.443416,
+                    "Seq2Point": 301.648893
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 445.984235,
+                    "Seq2Point": 438.341673
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 896.611155,
+                    "Seq2Point": 887.633511
+                },
+                "oven": {
+                    "Seq2Seq": 582.908065,
+                    "Seq2Point": 567.904619
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.148515,
+                    "Seq2Point": 0.20712
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.371429
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.376448,
+                    "Seq2Point": 0.371429
+                },
+                "kettle": {
+                    "Seq2Seq": 0.368932,
+                    "Seq2Point": 0.043478
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.13936
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.137255
+                },
+                "oven": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.169165
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 0.959306,
+                    "Seq2Point": 0.946656
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.031202,
+                    "Seq2Point": 0.930842
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 1.070006,
+                    "Seq2Point": 0.942261
+                },
+                "kettle": {
+                    "Seq2Seq": 0.984775,
+                    "Seq2Point": 0.998698
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 1.0,
+                    "Seq2Point": 0.982864
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.000001,
+                    "Seq2Point": 0.989988
+                },
+                "oven": {
+                    "Seq2Seq": 1.0,
+                    "Seq2Point": 0.974261
+                }
+            }
+        },
+        "99": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 27.50934,
+                    "Seq2Point": 25.479801
+                },
+                "air conditioner": {
+                    "Seq2Seq": 235.625214,
+                    "Seq2Point": 285.304596
+                },
+                "washing machine": {
+                    "Seq2Seq": 16.625015,
+                    "Seq2Point": 21.053837
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 315.391693,
+                    "Seq2Point": 433.34671
+                },
+                "kettle": {
+                    "Seq2Seq": 139.692703,
+                    "Seq2Point": 127.420471
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 117.331375,
+                    "Seq2Point": 147.99382
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 247.450851,
+                    "Seq2Point": 266.019897
+                },
+                "oven": {
+                    "Seq2Seq": 222.520798,
+                    "Seq2Point": 224.877991
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 53.635127,
+                    "Seq2Point": 52.54625
+                },
+                "air conditioner": {
+                    "Seq2Seq": 320.440151,
+                    "Seq2Point": 501.474217
+                },
+                "washing machine": {
+                    "Seq2Seq": 27.000833,
+                    "Seq2Point": 26.601624
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 530.130232,
+                    "Seq2Point": 566.87099
+                },
+                "kettle": {
+                    "Seq2Seq": 355.72011,
+                    "Seq2Point": 301.140891
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 437.70065,
+                    "Seq2Point": 436.227435
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 884.783519,
+                    "Seq2Point": 888.533588
+                },
+                "oven": {
+                    "Seq2Seq": 563.927522,
+                    "Seq2Point": 566.314869
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.097015,
+                    "Seq2Point": 0.159322
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.250429,
+                    "Seq2Point": 0.344627
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.429515,
+                    "Seq2Point": 0.371429
+                },
+                "kettle": {
+                    "Seq2Seq": 0.061093,
+                    "Seq2Point": 0.043478
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.193309,
+                    "Seq2Point": 0.114664
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.2,
+                    "Seq2Point": 0.137255
+                },
+                "oven": {
+                    "Seq2Seq": 0.170075,
+                    "Seq2Point": 0.169165
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 0.996244,
+                    "Seq2Point": 0.976018
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.952898,
+                    "Seq2Point": 0.938809
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.97181,
+                    "Seq2Point": 1.039161
+                },
+                "kettle": {
+                    "Seq2Seq": 1.177717,
+                    "Seq2Point": 0.997016
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.981427,
+                    "Seq2Point": 0.978123
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.986809,
+                    "Seq2Point": 0.990992
+                },
+                "oven": {
+                    "Seq2Seq": 0.967438,
+                    "Seq2Point": 0.971534
+                }
+            }
+        }
+    },
+    "3": {
+        "199": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 32.509586,
+                    "Seq2Point": 29.736662
+                },
+                "air conditioner": {
+                    "Seq2Seq": 177.356323,
+                    "Seq2Point": 191.584656
+                },
+                "washing machine": {
+                    "Seq2Seq": 19.902205,
+                    "Seq2Point": 17.520702
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 212.364441,
+                    "Seq2Point": 217.414902
+                },
+                "kettle": {
+                    "Seq2Seq": 175.051743,
+                    "Seq2Point": 202.775497
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 124.291931,
+                    "Seq2Point": 115.844902
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 281.104156,
+                    "Seq2Point": 267.156921
+                },
+                "oven": {
+                    "Seq2Seq": 234.668213,
+                    "Seq2Point": 273.30365
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 56.767031,
+                    "Seq2Point": 52.188225
+                },
+                "air conditioner": {
+                    "Seq2Seq": 379.63708,
+                    "Seq2Point": 492.077992
+                },
+                "washing machine": {
+                    "Seq2Seq": 31.609289,
+                    "Seq2Point": 28.668267
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 431.95522,
+                    "Seq2Point": 543.053548
+                },
+                "kettle": {
+                    "Seq2Seq": 439.847381,
+                    "Seq2Point": 526.731549
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 459.337515,
+                    "Seq2Point": 448.28632
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 944.766472,
+                    "Seq2Point": 911.604732
+                },
+                "oven": {
+                    "Seq2Seq": 620.026738,
+                    "Seq2Point": 704.686433
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.166834
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.389199,
+                    "Seq2Point": 0.395846
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.378415,
+                    "Seq2Point": 0.379461
+                },
+                "kettle": {
+                    "Seq2Seq": 0.136543,
+                    "Seq2Point": 0.113778
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.081181,
+                    "Seq2Point": 0.045981
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.099042,
+                    "Seq2Point": 0.068854
+                },
+                "oven": {
+                    "Seq2Seq": 0.084522,
+                    "Seq2Point": 0.123295
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.048705,
+                    "Seq2Point": 0.964117
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.027366,
+                    "Seq2Point": 0.931777
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.752274,
+                    "Seq2Point": 0.945758
+                },
+                "kettle": {
+                    "Seq2Seq": 1.450338,
+                    "Seq2Point": 1.736826
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 1.017596,
+                    "Seq2Point": 0.993113
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.038204,
+                    "Seq2Point": 1.001762
+                },
+                "oven": {
+                    "Seq2Seq": 1.059452,
+                    "Seq2Point": 1.204111
+                }
+            }
+        },
+        "599": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 27.524433,
+                    "Seq2Point": 31.097624
+                },
+                "air conditioner": {
+                    "Seq2Seq": 146.781616,
+                    "Seq2Point": 222.125977
+                },
+                "washing machine": {
+                    "Seq2Seq": 20.093945,
+                    "Seq2Point": 20.718771
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 221.455811,
+                    "Seq2Point": 216.152786
+                },
+                "kettle": {
+                    "Seq2Seq": 149.353424,
+                    "Seq2Point": 246.40274
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 108.771774,
+                    "Seq2Point": 115.918373
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 257.595215,
+                    "Seq2Point": 244.997757
+                },
+                "oven": {
+                    "Seq2Seq": 216.569077,
+                    "Seq2Point": 210.03302
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 54.468136,
+                    "Seq2Point": 56.160776
+                },
+                "air conditioner": {
+                    "Seq2Seq": 286.439662,
+                    "Seq2Point": 615.064783
+                },
+                "washing machine": {
+                    "Seq2Seq": 33.304917,
+                    "Seq2Point": 32.148964
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 420.711804,
+                    "Seq2Point": 493.048711
+                },
+                "kettle": {
+                    "Seq2Seq": 429.483829,
+                    "Seq2Point": 830.8446
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 438.968304,
+                    "Seq2Point": 428.243487
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 910.27719,
+                    "Seq2Point": 906.976915
+                },
+                "oven": {
+                    "Seq2Seq": 589.57323,
+                    "Seq2Point": 596.468199
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.005015,
+                    "Seq2Point": 0.131667
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.381071,
+                    "Seq2Point": 0.352958
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.406342,
+                    "Seq2Point": 0.624157
+                },
+                "kettle": {
+                    "Seq2Seq": 0.091486,
+                    "Seq2Point": 0.103655
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.227273,
+                    "Seq2Point": 0.238901
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.108855,
+                    "Seq2Point": 0.172115
+                },
+                "oven": {
+                    "Seq2Seq": 0.106096,
+                    "Seq2Point": 0.082732
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.006236,
+                    "Seq2Point": 1.037505
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.082477,
+                    "Seq2Point": 1.044906
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.732693,
+                    "Seq2Point": 0.858671
+                },
+                "kettle": {
+                    "Seq2Seq": 1.416165,
+                    "Seq2Point": 2.739598
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.97247,
+                    "Seq2Point": 0.948711
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.000304,
+                    "Seq2Point": 0.996677
+                },
+                "oven": {
+                    "Seq2Seq": 1.007415,
+                    "Seq2Point": 1.019197
+                }
+            }
+        },
+        "99": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 32.373611,
+                    "Seq2Point": 30.269407
+                },
+                "air conditioner": {
+                    "Seq2Seq": 183.661087,
+                    "Seq2Point": 183.489594
+                },
+                "washing machine": {
+                    "Seq2Seq": 20.397919,
+                    "Seq2Point": 18.76338
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 220.378204,
+                    "Seq2Point": 205.941879
+                },
+                "kettle": {
+                    "Seq2Seq": 134.167816,
+                    "Seq2Point": 214.27742
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 111.195953,
+                    "Seq2Point": 122.0037
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 251.831482,
+                    "Seq2Point": 260.578369
+                },
+                "oven": {
+                    "Seq2Seq": 268.7677,
+                    "Seq2Point": 265.974487
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 53.703214,
+                    "Seq2Point": 53.419928
+                },
+                "air conditioner": {
+                    "Seq2Seq": 417.78626,
+                    "Seq2Point": 531.611906
+                },
+                "washing machine": {
+                    "Seq2Seq": 30.502114,
+                    "Seq2Point": 29.959729
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 512.413712,
+                    "Seq2Point": 552.494796
+                },
+                "kettle": {
+                    "Seq2Seq": 371.405418,
+                    "Seq2Point": 623.081731
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 433.618406,
+                    "Seq2Point": 426.801897
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 899.185673,
+                    "Seq2Point": 906.71233
+                },
+                "oven": {
+                    "Seq2Seq": 643.833174,
+                    "Seq2Point": 667.389738
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.179023,
+                    "Seq2Point": 0.106454
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.392475,
+                    "Seq2Point": 0.385046
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.375732,
+                    "Seq2Point": 0.364166
+                },
+                "kettle": {
+                    "Seq2Seq": 0.131559,
+                    "Seq2Point": 0.19493
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.070931,
+                    "Seq2Point": 0.079968
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.086427,
+                    "Seq2Point": 0.073711
+                },
+                "oven": {
+                    "Seq2Seq": 0.086005,
+                    "Seq2Point": 0.062348
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 0.992105,
+                    "Seq2Point": 0.986871
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.991381,
+                    "Seq2Point": 0.973752
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.892397,
+                    "Seq2Point": 0.9622
+                },
+                "kettle": {
+                    "Seq2Seq": 1.224659,
+                    "Seq2Point": 2.054528
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.960619,
+                    "Seq2Point": 0.945518
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.988115,
+                    "Seq2Point": 0.996386
+                },
+                "oven": {
+                    "Seq2Seq": 1.10013,
+                    "Seq2Point": 1.140382
+                }
+            }
+        }
+    },
+    "6": {
+        "199": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 29.157536,
+                    "Seq2Point": 34.225037
+                },
+                "air conditioner": {
+                    "Seq2Seq": 202.320679,
+                    "Seq2Point": 351.4245
+                },
+                "washing machine": {
+                    "Seq2Seq": 20.750463,
+                    "Seq2Point": 17.862684
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 232.968521,
+                    "Seq2Point": 261.475647
+                },
+                "kettle": {
+                    "Seq2Seq": 163.00412,
+                    "Seq2Point": 293.918182
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 119.462265,
+                    "Seq2Point": 151.042206
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 280.145813,
+                    "Seq2Point": 299.032104
+                },
+                "oven": {
+                    "Seq2Seq": 231.516785,
+                    "Seq2Point": 205.786591
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 54.70811,
+                    "Seq2Point": 55.082234
+                },
+                "air conditioner": {
+                    "Seq2Seq": 384.67011,
+                    "Seq2Point": 866.527841
+                },
+                "washing machine": {
+                    "Seq2Seq": 29.98604,
+                    "Seq2Point": 27.744466
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 437.871521,
+                    "Seq2Point": 571.929902
+                },
+                "kettle": {
+                    "Seq2Seq": 415.457391,
+                    "Seq2Point": 1001.944796
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 455.677963,
+                    "Seq2Point": 449.686627
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 949.737497,
+                    "Seq2Point": 980.243114
+                },
+                "oven": {
+                    "Seq2Seq": 615.107689,
+                    "Seq2Point": 593.406453
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.013019,
+                    "Seq2Point": 0.206762
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.415225,
+                    "Seq2Point": 0.390117
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.379548,
+                    "Seq2Point": 0.377812
+                },
+                "kettle": {
+                    "Seq2Seq": 0.109503,
+                    "Seq2Point": 0.133545
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.090278,
+                    "Seq2Point": 0.081358
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.210678,
+                    "Seq2Point": 0.035533
+                },
+                "oven": {
+                    "Seq2Seq": 0.07957,
+                    "Seq2Point": 0.117684
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.011242,
+                    "Seq2Point": 1.018157
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.00914,
+                    "Seq2Point": 0.933702
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.767361,
+                    "Seq2Point": 1.002295
+                },
+                "kettle": {
+                    "Seq2Seq": 1.370697,
+                    "Seq2Point": 3.305663
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 1.010274,
+                    "Seq2Point": 0.996991
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.046287,
+                    "Seq2Point": 1.079894
+                },
+                "oven": {
+                    "Seq2Seq": 1.052232,
+                    "Seq2Point": 1.015108
+                }
+            }
+        },
+        "599": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 27.778009,
+                    "Seq2Point": 34.051598
+                },
+                "air conditioner": {
+                    "Seq2Seq": 207.903244,
+                    "Seq2Point": 298.313843
+                },
+                "washing machine": {
+                    "Seq2Seq": 21.593275,
+                    "Seq2Point": 19.724548
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 273.353424,
+                    "Seq2Point": 212.791946
+                },
+                "kettle": {
+                    "Seq2Seq": 181.488678,
+                    "Seq2Point": 210.7509
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 111.399734,
+                    "Seq2Point": 113.300896
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 251.844711,
+                    "Seq2Point": 262.458801
+                },
+                "oven": {
+                    "Seq2Seq": 188.860611,
+                    "Seq2Point": 217.816605
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 55.885282,
+                    "Seq2Point": 59.728318
+                },
+                "air conditioner": {
+                    "Seq2Seq": 424.186464,
+                    "Seq2Point": 568.431779
+                },
+                "washing machine": {
+                    "Seq2Seq": 32.420783,
+                    "Seq2Point": 31.374093
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 423.713807,
+                    "Seq2Point": 484.564624
+                },
+                "kettle": {
+                    "Seq2Seq": 502.453916,
+                    "Seq2Point": 861.415079
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 437.85532,
+                    "Seq2Point": 424.85766
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 905.901278,
+                    "Seq2Point": 875.781151
+                },
+                "oven": {
+                    "Seq2Seq": 581.660285,
+                    "Seq2Point": 578.338163
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.011806,
+                    "Seq2Point": 0.105866
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.349157,
+                    "Seq2Point": 0.404332
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.381692,
+                    "Seq2Point": 0.5872
+                },
+                "kettle": {
+                    "Seq2Seq": 0.114549,
+                    "Seq2Point": 0.133219
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.230236,
+                    "Seq2Point": 0.149333
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.186667,
+                    "Seq2Point": 0.080467
+                },
+                "oven": {
+                    "Seq2Seq": 0.207612,
+                    "Seq2Point": 0.130044
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.033001,
+                    "Seq2Point": 1.104037
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 1.091078,
+                    "Seq2Point": 1.055853
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.74255,
+                    "Seq2Point": 0.849189
+                },
+                "kettle": {
+                    "Seq2Seq": 1.657719,
+                    "Seq2Point": 2.842021
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.97076,
+                    "Seq2Point": 0.941943
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.997995,
+                    "Seq2Point": 0.964813
+                },
+                "oven": {
+                    "Seq2Seq": 0.995015,
+                    "Seq2Point": 0.989332
+                }
+            }
+        },
+        "99": {
+            "mae": {
+                "fridge": {
+                    "Seq2Seq": 31.19276,
+                    "Seq2Point": 33.222279
+                },
+                "air conditioner": {
+                    "Seq2Seq": 175.988846,
+                    "Seq2Point": 125.912376
+                },
+                "washing machine": {
+                    "Seq2Seq": 19.48926,
+                    "Seq2Point": 17.752977
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 226.211136,
+                    "Seq2Point": 271.005249
+                },
+                "kettle": {
+                    "Seq2Seq": 210.872711,
+                    "Seq2Point": 263.325439
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 114.875252,
+                    "Seq2Point": 131.604248
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 288.425903,
+                    "Seq2Point": 249.866806
+                },
+                "oven": {
+                    "Seq2Seq": 235.33847,
+                    "Seq2Point": 257.696716
+                }
+            },
+            "rmse": {
+                "fridge": {
+                    "Seq2Seq": 54.125038,
+                    "Seq2Point": 53.87846
+                },
+                "air conditioner": {
+                    "Seq2Seq": 329.332362,
+                    "Seq2Point": 372.932195
+                },
+                "washing machine": {
+                    "Seq2Seq": 28.525574,
+                    "Seq2Point": 27.876582
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 410.091834,
+                    "Seq2Point": 614.074812
+                },
+                "kettle": {
+                    "Seq2Seq": 470.060518,
+                    "Seq2Point": 642.277393
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 444.981934,
+                    "Seq2Point": 443.270692
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 951.915569,
+                    "Seq2Point": 907.646097
+                },
+                "oven": {
+                    "Seq2Seq": 624.460192,
+                    "Seq2Point": 638.18642
+                }
+            },
+            "f1score": {
+                "fridge": {
+                    "Seq2Seq": 0.101437,
+                    "Seq2Point": 0.15555
+                },
+                "air conditioner": {
+                    "Seq2Seq": 0.0,
+                    "Seq2Point": 0.0
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.387017,
+                    "Seq2Point": 0.391922
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.383616,
+                    "Seq2Point": 0.379836
+                },
+                "kettle": {
+                    "Seq2Seq": 0.052952,
+                    "Seq2Point": 0.102715
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.08472,
+                    "Seq2Point": 0.102339
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 0.156863,
+                    "Seq2Point": 0.141667
+                },
+                "oven": {
+                    "Seq2Seq": 0.10102,
+                    "Seq2Point": 0.08942
+                }
+            },
+            "nde": {
+                "fridge": {
+                    "Seq2Seq": 1.000464,
+                    "Seq2Point": 0.995906
+                },
+                "air conditioner": {
+                    "Seq2Seq": Infinity,
+                    "Seq2Point": Infinity
+                },
+                "washing machine": {
+                    "Seq2Seq": 0.95999,
+                    "Seq2Point": 0.938149
+                },
+                "tumble dryer": {
+                    "Seq2Seq": 0.718677,
+                    "Seq2Point": 1.076153
+                },
+                "kettle": {
+                    "Seq2Seq": 1.550846,
+                    "Seq2Point": 2.119032
+                },
+                "vacuum cleaner": {
+                    "Seq2Seq": 0.98656,
+                    "Seq2Point": 0.982766
+                },
+                "electric water heating appliance": {
+                    "Seq2Seq": 1.048687,
+                    "Seq2Point": 0.999917
+                },
+                "oven": {
+                    "Seq2Seq": 1.06823,
+                    "Seq2Point": 1.091711
+                }
+            }
+        }
+    }
+}

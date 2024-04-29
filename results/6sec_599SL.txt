@@ -1,0 +1,40 @@
+............  mae  ..............
+                                     Seq2Seq  Seq2Point
+fridge                             27.778009   34.051598
+air conditioner                   207.903244  298.313843
+washing machine                    21.593275   19.724548
+tumble dryer                      273.353424  212.791946
+kettle                            181.488678  210.750900
+vacuum cleaner                    111.399734  113.300896
+electric water heating appliance  251.844711  262.458801
+oven                              188.860611  217.816605
+............  rmse  ..............
+                                     Seq2Seq  Seq2Point
+fridge                             55.885282   59.728318
+air conditioner                   424.186464  568.431779
+washing machine                    32.420783   31.374093
+tumble dryer                      423.713807  484.564624
+kettle                            502.453916  861.415079
+vacuum cleaner                    437.855320  424.857660
+electric water heating appliance  905.901278  875.781151
+oven                              581.660285  578.338163
+............  f1score  ..............
+                                   Seq2Seq  Seq2Point
+fridge                            0.011806    0.105866
+air conditioner                   0.000000    0.000000
+washing machine                   0.349157    0.404332
+tumble dryer                      0.381692    0.587200
+kettle                            0.114549    0.133219
+vacuum cleaner                    0.230236    0.149333
+electric water heating appliance  0.186667    0.080467
+oven                              0.207612    0.130044
+............  nde  ..............
+                                   Seq2Seq  Seq2Point
+fridge                            1.033001    1.104037
+air conditioner                        inf         inf
+washing machine                   1.091078    1.055853
+tumble dryer                      0.742550    0.849189
+kettle                            1.657719    2.842021
+vacuum cleaner                    0.970760    0.941943
+electric water heating appliance  0.997995    0.964813
+oven                              0.995015    0.989332
