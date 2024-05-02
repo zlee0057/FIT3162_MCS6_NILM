@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from os.path import join
 import pickle
-from api import API
+from nilmtk.api import API
 from tempfile import NamedTemporaryFile
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
@@ -40,6 +40,12 @@ def main():
     if 'model' not in st.session_state:
         st.session_state.model = None
     
+    if 'dataframe' not in st.session_state:
+        st.session_state.dataframe = None
+    
+    if 'appliances' not in st.session_state:
+        st.session_state.appliances = None
+    
     if uploaded_file:
         
         with NamedTemporaryFile(delete = False, suffix=os.path.splitext(uploaded_file.name)[1]) as temp_file:
@@ -70,25 +76,27 @@ def main():
                 
                 st.session_state.model = model
                 st.session_state.loaded = True
-                
-        dataframe = st.session_state.model.pred_overall['Seq2SPoint']
-        appliances = dataframe.columns.tolist()
         
+        if st.session_state.dataframe is None and st.session_state.appliances is None:
+            st.session_state.dataframe = st.session_state.model.pred_overall['Seq2SPoint'].copy()
+            st.session_state.appliances = st.session_state.dataframe.columns.tolist()
+    
         col1, col2, col3 = st.columns(3)
         
         columns = [col1, col2, col3]
-        
-        num_appliance = len(appliances)
-        
+            
         k = 0
-        for i in range(num_appliance):
+        for i in range(len(st.session_state.appliances)):
             button_key = f"button_{i}"
-            if columns[k % 3].button(appliances[i].capitalize(), key = button_key):
+            if columns[k % 3].button(st.session_state.appliances[i].capitalize(), key = button_key):
                 
-                # st.subheader(appliances[i].capitalize() + " Usage")
+                st.subheader(st.session_state.appliances[i].capitalize() + " Usage with ON/OFF states")
+                
+                chart_data = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]]
+                st.line_chart(chart_data)
                 
                 # Extract the values
-                X = st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]].values.reshape(-1, 1)
+                X = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]].values.reshape(-1, 1)
 
                 # Apply k-means clustering with k=2
                 kmeans = KMeans(n_clusters=2)
@@ -100,46 +108,19 @@ def main():
                 # Calculate the threshold value
                 threshold = (centroids[0][0] + centroids[1][0]) / 2
                 
+                # A new column for ON/OFF states
+                st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states'] = 0
                 
-                base = alt.Chart(st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]]).mark_line().encode(
-                    x=st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]].index,
-                    y=alt.Y(appliances[i], title='Power Usage')
-                )
-
-                # Conditional coloring
-                line = base.encode(
-                    color=alt.condition(
-                        alt.datum.y > threshold,
-                        alt.value('red'),  # Color if value is greater than threshold
-                        alt.value('blue')  # Color if value is less than or equal to threshold
-                    )
-                )
-
-                # Plot the chart
-                st.altair_chart(line, use_container_width=True)
+                # The window size
+                window_size = 99
                 
+                for k in range(0, len(st.session_state.model.pred_overall['Seq2SPoint']), window_size - 1):
+                    if st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]].iloc[k] > threshold:
+                        st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states'].iloc[k:k + window_size] = 1
                 
-                # chart_data = st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]]
-                # st.line_chart(chart_data)
-            
+                on_off_chart = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states']
                 
-                # # Plot the line graph
-                # plt.figure(figsize = (15, 9))
-                
-                # plt.plot(st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]].index, st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]], color='blue')
-                
-                # # Iterate through rows in new_data to plot background colors
-                # for j in range(1, len(st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]])):
-                #     if st.session_state.model.pred_overall['Seq2SPoint'][appliances[i]][j] > threshold:
-                #         plt.axvspan(st.session_state.model.pred_overall['Seq2SPoint'].index[j-1], st.session_state.model.pred_overall['Seq2SPoint'].index[j], color='orange', alpha=0.05)
-                
-                # # Set labels and title
-                # plt.xlabel('Timestamp')
-                # plt.ylabel('Power Usage')
-                # plt.title(appliances[i].capitalize() + " Usage with ON-OFF states")
-
-                # # Show plot
-                # st.pyplot(plt)
+                st.line_chart(on_off_chart)
                 
             k += 1
     
