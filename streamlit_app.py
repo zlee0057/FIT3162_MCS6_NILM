@@ -2,13 +2,9 @@ import streamlit as st
 import os
 from os.path import join
 import pickle
-from nilmtk.api import API
+from api import API
 from tempfile import NamedTemporaryFile
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import pandas as pd
-import altair as alt
 
 # Import the model
 def import_model(filename):
@@ -16,6 +12,37 @@ def import_model(filename):
         model = pickle.load(f)
     return model
 
+# Display selected appliance information
+def display_appliance_info(appliance):
+    st.subheader(appliance.capitalize() + " Usage with ON/OFF states")
+    chart_data = st.session_state.model.pred_overall['Seq2SPoint'][appliance]
+    st.line_chart(chart_data)
+
+    # Extract the values
+    X = st.session_state.model.pred_overall['Seq2SPoint'][appliance].values.reshape(-1, 1)
+
+    # Apply k-means clustering with k=2
+    kmeans = KMeans(n_clusters=2)
+    kmeans.fit(X)
+
+    # Get the centroids
+    centroids = kmeans.cluster_centers_
+
+    # Calculate the threshold value
+    threshold = (centroids[0][0] + centroids[1][0]) / 2
+
+    # A new column for ON/OFF states
+    st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'] = 0
+
+    # The window size
+    window_size = 99
+
+    for k in range(0, len(st.session_state.model.pred_overall['Seq2SPoint']), window_size - 1):
+        if st.session_state.model.pred_overall['Seq2SPoint'][appliance].iloc[k] > threshold:
+            st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'].iloc[k:k + window_size] = 1
+
+    on_off_chart = st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states']
+    st.line_chart(on_off_chart)
 
 def main():
     # The UI Title
@@ -81,53 +108,12 @@ def main():
             st.session_state.dataframe = st.session_state.model.pred_overall['Seq2SPoint'].copy()
             st.session_state.appliances = st.session_state.dataframe.columns.tolist()
     
-        col1, col2, col3 = st.columns(3)
-        
-        columns = [col1, col2, col3]
-            
-        k = 0
-        for i in range(len(st.session_state.appliances)):
-            button_key = f"button_{i}"
-            if columns[k % 3].button(st.session_state.appliances[i].capitalize(), key = button_key):
-                
-                st.subheader(st.session_state.appliances[i].capitalize() + " Usage with ON/OFF states")
-                
-                chart_data = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]]
-                st.line_chart(chart_data)
-                
-                # Extract the values
-                X = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]].values.reshape(-1, 1)
-
-                # Apply k-means clustering with k=2
-                kmeans = KMeans(n_clusters=2)
-                kmeans.fit(X)
-                
-                # Get the centroids
-                centroids = kmeans.cluster_centers_
-
-                # Calculate the threshold value
-                threshold = (centroids[0][0] + centroids[1][0]) / 2
-                
-                # A new column for ON/OFF states
-                st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states'] = 0
-                
-                # The window size
-                window_size = 99
-                
-                for k in range(0, len(st.session_state.model.pred_overall['Seq2SPoint']), window_size - 1):
-                    if st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i]].iloc[k] > threshold:
-                        st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states'].iloc[k:k + window_size] = 1
-                
-                on_off_chart = st.session_state.model.pred_overall['Seq2SPoint'][st.session_state.appliances[i] + ' ON/OFF states']
-                
-                st.line_chart(on_off_chart)
-                
-            k += 1
-    
-    else:
-        st.session_state.loaded = False
-
-
+    if uploaded_file and st.session_state.loaded:
+        # Sidebar with buttons
+        st.sidebar.markdown("### Appliances")
+        for appliance in st.session_state.appliances:
+            if st.sidebar.button(appliance.capitalize()):
+                display_appliance_info(appliance)
 
 if __name__ == "__main__":
     main()
