@@ -12,8 +12,8 @@ After setting up the environment and running the StreamLit application locally a
 Once you have downloaded and uploaded the H5 file, you can then run it through our state-of-the-art, time series Seq2Point model, which has been trained to recognize the consumption patterns of a wide variety of common household appliances (specifically in Malaysia). The model will then generate predicted power consumption values for each appliance it has been trained on, which includes the following 8 appliances: fridge, air conditioner, washing machine, tumble dryer, kettle, vacuum cleaner, electric water heating appliance, and oven.
 
 ### Visualizing the Results
-After the model has processed your data, you will be prompted to select which specific appliances you want to visualize from the previously mentioned ones. The application will then generate a line graph, displaying the predicted power consumption over time for your selected appliances. Moreover, the on-off states of each appliance will also be clearly depicted through a binary line graph, where 1 would mean that the appliance is turned on and 0 otherwise.
-With this power tool, you can gain valuable insights into your energy usage patterns without the hassle and expense of instrumenting each appliance. Identify energy hogs, optimize usage, and most importantly, save money on your utility bills!
+After the model has processed your data, you will be prompted to select which specific appliances you want via a dropdown menu to visualize from the previously mentioned ones. The application will then generate a line graph, displaying the predicted power consumption over time for your selected appliances. Moreover, the on-off states of each appliance will also be clearly depicted through a binary line graph, where 1 would mean that the appliance is turned on and 0 otherwise. Aside from selecting appliances, the application also includes a feature that allows you to adjust the time range of the output graphs. With this power tool, you can gain valuable insights into your energy usage patterns without the hassle and expense of instrumenting each appliance. Identify energy hogs, optimize usage, and most importantly, save money on your utility bills!
+
 
 ## How to Use the Application
 
@@ -21,7 +21,7 @@ After setting up your environment and running the StreamLit application locally 
 
 1. Upload the test dataset by either dragging it into the “Drag and drop file here” area or by clicking on the “Browse files” button and selecting the dataset. The test dataset can be found as “mimos_1sec.h5” under the data folder.
 
-2. Now please wait for the model to finish running. Once the model finishes running, a sidebar will pop up from the left side of your screen with one button for each detected appliance.
+2. Now please wait for the model to finish running. Once the model finishes running, a sidebar will pop up from the left side of your screen with a dropdown menu containing the various detected appliances and two sliders that allow you to adjust the time range of the output graphs.
 
 3. Now, you can click on each appliance button, and the application will display two graphs for each appliance:
     - Generated power consumption values for each appliance.
