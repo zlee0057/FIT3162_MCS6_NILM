@@ -107,7 +107,7 @@ def main():
         st.sidebar.markdown("### Appliances")
         selected_appliance = st.sidebar.selectbox("Select Appliance", st.session_state.appliances)
 
-        st.sidebar.markdown("### Adjust Time Range")
+        st.sidebar.markdown("### Adjust Time Range (UNIX)")
         start_time_unix = st.sidebar.slider("Start Time", min_value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp(), max_value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp(), value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp())
         end_time_unix = st.sidebar.slider("End Time", min_value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp(), max_value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp(), value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp())
         start_time = pd.Timestamp.fromtimestamp(start_time_unix)
