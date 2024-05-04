@@ -75,7 +75,7 @@ def main():
     
     if uploaded_file:
         
-        with NamedTemporaryFile(delete = False, suffix=os.path.splitext(uploaded_file.name)[1]) as temp_file:
+        with NamedTemporaryFile(delete=False, suffix=".h5") as temp_file:
             temp_file.write(uploaded_file.getvalue())
             temp_file_path = temp_file.name
         
@@ -91,7 +91,7 @@ def main():
         }
         
         if st.session_state.loaded == False:
-            with st.spinner('Loading...'):
+            with st.spinner('Running the model...'):
                 # The model path
                 trained_model_path = join(os.getcwd(), "trained_models/1sec_99SL.pickle")
                 
