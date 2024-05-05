@@ -6,6 +6,7 @@ from api import API
 from tempfile import NamedTemporaryFile
 from sklearn.cluster import KMeans
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Import the model
 def import_model(filename):
@@ -32,9 +33,20 @@ def pre_generate_graphs():
 def display_appliance_info(appliance, start_time, end_time):
     st.subheader(appliance.capitalize() + " Usage with ON/OFF states")
     chart_data = st.session_state.model.pred_overall['Seq2SPoint'][appliance].loc[start_time:end_time]
+    chart_data.index = chart_data.index.strftime('%H:%M:%S')
     st.line_chart(chart_data)
+    
     on_off_chart = st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'].loc[start_time:end_time]
+    on_off_chart.index = on_off_chart.index.strftime('%H:%M:%S')
     st.line_chart(on_off_chart)
+
+# Validate timestamp format
+def validate_timestamp(timestamp_str):
+    try:
+        pd.to_datetime(timestamp_str)
+        return True
+    except ValueError:
+        return False
 
 def main():
     # The UI Title
@@ -107,17 +119,31 @@ def main():
         st.sidebar.markdown("### Appliances")
         selected_appliance = st.sidebar.selectbox("Select Appliance", st.session_state.appliances)
 
-        st.sidebar.markdown("### Adjust Time Range (UNIX)")
-        start_time_unix = st.sidebar.slider("Start Time", min_value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp(), max_value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp(), value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp())
-        end_time_unix = st.sidebar.slider("End Time", min_value=st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp(), max_value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp(), value=st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp())
-        start_time = pd.Timestamp.fromtimestamp(start_time_unix)
-        end_time = pd.Timestamp.fromtimestamp(end_time_unix)
+        st.sidebar.markdown("### Adjust Time Range")
+        start_header = "Start Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
+        start_time_input = st.sidebar.text_input(start_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
         
+        end_header = "End Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
+        end_time_input = st.sidebar.text_input(end_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
+
+        # Validate start time input
+        if not validate_timestamp(start_time_input):
+            st.error("Error: Please enter a valid start time format (YYYY-MM-DD HH: MM: SS).")
+            st.error("Hours should be in 24-hour format.")
+            st.error("Minutes should be within 0-59.")
+            st.error("Seconds should be within 0-59.")
+            return
+
+        start_time_readable = pd.Timestamp(start_time_input)
+        end_time_readable = pd.Timestamp(end_time_input)
+            
+
         # Validation check for start and end times
-        if start_time > end_time:
-            st.sidebar.error("Error: Please select a valid time range. Start time cannot be greater than end time.")
-        else:
-            display_appliance_info(selected_appliance, start_time, end_time)
+        if start_time_readable > end_time_readable:
+            st.error("Error: Please select a valid time range. Start time cannot be greater than end time.")
+            return
+
+        display_appliance_info(selected_appliance, start_time_readable, end_time_readable)
 
 if __name__ == "__main__":
     main()

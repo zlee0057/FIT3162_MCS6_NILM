@@ -21,7 +21,7 @@ After setting up your environment and running the StreamLit application locally 
 
 1. Upload the test dataset by either dragging it into the “Drag and drop file here” area or by clicking on the “Browse files” button and selecting the dataset. The test dataset can be found as “mimos_1sec.h5” under the data folder.
 
-2. Now please wait for the model to finish running. Once the model finishes running, a sidebar will pop up from the left side of your screen with a dropdown menu containing the various detected appliances and two sliders that allow you to adjust the time range of the output graphs.
+2. Now please wait for the model to finish running. Once the model finishes running, a sidebar will pop up from the left side of your screen with a dropdown menu containing the various detected appliances and two text fields that allow you to adjust the time range of the output graphs.
 
 3. Now, you can click on each appliance button, and the application will display two graphs for each appliance:
     - Generated power consumption values for each appliance.
