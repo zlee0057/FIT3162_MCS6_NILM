@@ -1,0 +1,29 @@
+MIMOS_appliance:
+  model: AIREM-device
+  manufacturer: unknown
+  manufacturer_url: unknown
+  description: Individual Appliance monitor
+  sample_period: 3 
+  max_sample_period: 3
+  measurements:
+  - physical_quantity: power 
+    type: active   
+    upper_limit: 8000
+    lower_limit: 0
+  wireless: false
+
+MIMOS_whole_house:
+  model: AIREM-device
+  manufacturer: unknown
+  manufacturer_url: unknown
+  description: Entire house power meter
+  sample_period: 3
+  max_sample_period: 3
+  measurements:
+  - physical_quantity: power
+    type: active
+    upper_limit: 10000
+    lower_limit: 0
+  wireless: false
+
+    

@@ -1,0 +1,11 @@
+name: AIREM
+long_name: AI-Based Residential Energy Monitoring Dataset
+date: 2024-03-18
+description: MIMOS NILM Dataset
+number_of_buildings: 7
+timezone: Asia/Kuala_Lumpur
+timeframe: {end: '2022-11-10T12:46:32+08:00', start: '2022-09-27T15:52:32+08:00'}
+geo_location:
+  locality: Kuala Lumpur
+  country: MY
+schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2

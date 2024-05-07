@@ -1,0 +1,58 @@
+instance: 3
+elec_meters:
+  1: &MIMOS_whole_house
+    site_meter: true
+    device_model: MIMOS_whole_house
+    timeframes: {end: '2022-11-01T18:09:20+08:00', start: '2022-11-01T16:17:36+08:00'}
+  2: &MIMOS_appliance
+    submeter_of: 0 
+    device_model: MIMOS_appliance
+    timeframes: {end: '2022-11-01T18:09:20+08:00', start: '2022-11-01T16:17:36+08:00'}
+  3: *MIMOS_appliance
+  4: *MIMOS_appliance
+  5: *MIMOS_appliance
+  6: *MIMOS_appliance
+  7: *MIMOS_appliance
+  8: *MIMOS_appliance
+  9: *MIMOS_appliance
+  
+appliances:
+- original_name: Kettle
+  type: kettle
+  instance: 1
+  meters: [6]
+
+- original_name: Vacuum
+  type: vacuum cleaner
+  instance: 1
+  meters: [7]
+  
+- original_name: Water Heater
+  type: electric water heating appliance
+  instance: 1
+  meters: [8]
+
+- original_name: Oven
+  type: oven
+  instance: 1
+  meters: [9]
+  
+- original_name: Fridge
+  type: fridge
+  instance: 1
+  meters: [2]
+
+- original_name: Washing Machine
+  type: washing machine
+  instance: 1
+  meters: [4]
+  
+- original_name: Dryer
+  type: tumble dryer
+  instance: 1
+  meters: [5]
+
+- original_name: Air Conditioner
+  type: air conditioner
+  instance: 1
+  meters: [3]
