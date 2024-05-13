@@ -1,7 +1,7 @@
 import pytest
 from seleniumbase import BaseCase
 from selenium.webdriver.common.by import By
-from streamlit_app import validate_timestamp
+from streamlit_app import validate_timestamp, validate_h5_file
 
 
 @pytest.mark.parametrize("input, expected", [
@@ -35,6 +35,9 @@ from streamlit_app import validate_timestamp
 def test_validate_timestamp(input, expected):
     assert validate_timestamp(input) == expected
 
+def test_validate_h5_file():
+    # Test the function with a valid HDF5 file
+    assert validate_h5_file('./data/mimos_1_sec.h5')
 
 # Integration test for the Streamlit app
 class StreamlitAppTests(BaseCase):
