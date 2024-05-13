@@ -1,4 +1,6 @@
 import pytest
+from seleniumbase import BaseCase
+from selenium.webdriver.common.by import By
 from streamlit_app import validate_timestamp
 
 
@@ -32,3 +34,39 @@ from streamlit_app import validate_timestamp
 ])
 def test_validate_timestamp(input, expected):
     assert validate_timestamp(input) == expected
+
+
+# Integration test for the Streamlit app
+class StreamlitAppTests(BaseCase):
+
+    def setUp(self):
+        super().setUp()
+
+        # Open the Streamlit app URL
+        self.open("http://localhost:8501")
+
+        # Upload the HDF5 file
+        file_path = './data/mimos_1_sec.h5'
+        self.choose_file("input[type='file']", file_path)
+
+    def tearDown(self):
+        super().tearDown()
+
+    def test_upload(self):
+        # Wait for the HDF5 file validation message
+        self.assert_text("HDF5 file validation passed", 'p:contains("HDF5 file validation passed")', timeout=10)
+
+    def test_generate_graphs(self):
+        # Wait for the model to finish running
+        self.wait_for_element('p:contains("Running the model...")')
+        self.wait_for_element_absent('p:contains("Running the model...")', timeout=50)
+
+        # Wait for the graphs to be generated
+        self.wait_for_element('p:contains("Loading...")')
+        self.wait_for_element_absent('p:contains("Loading...")', timeout=10)
+
+        # Check if the graphs are generated
+        charts = self.find_elements(""".//*[@data-testid="stArrowVegaLiteChart"]//*[contains(concat(" ",normalize-space(@class)," ")," chart-wrapper ")]//*[contains(concat(" ",normalize-space(@class)," ")," marks ")]""", by=By.XPATH)
+        
+        # Check if the number of generated graphs is correct
+        assert len(charts) == 2
