@@ -42,6 +42,8 @@ def display_appliance_info(appliance, start_time, end_time):
 
 # Validate timestamp format
 def validate_timestamp(timestamp_str):
+    if not timestamp_str:
+        return False
     try:
         pd.to_datetime(timestamp_str)
         return True
@@ -144,7 +146,7 @@ def main():
             return
         
         if start_time_readable < pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()) or end_time_readable > pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()):
-            st.error("Error: Please select a valid time range that is within the default start and end time.")
+            st.error("Error: Please enter a valid time range that is within the default start and end time.")
             return
 
         display_appliance_info(selected_appliance, start_time_readable, end_time_readable)
