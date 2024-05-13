@@ -49,7 +49,7 @@ Then, run the following commands in your conda terminal:
 ```
 pip install git+https://github.com/nilmtk/nilm_metadata
 pip install --upgrade pandas
-pip install tensorflow== 2.11.0 
+pip install tensorflow==2.11.0 
 pip install streamlit==1.22.0
 ```
 Note: You may ignore any warning messages that pop up during this setup phase.
