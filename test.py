@@ -8,6 +8,26 @@ from selenium.webdriver.common.by import By
 from streamlit_app import validate_timestamp, validate_h5_file
 
 @pytest.mark.parametrize("building_number", range(1, 8))
+def test_merge_main_files(building_number):
+    folder_path = join(os.getcwd(), f'data_preprocessing/buildings_by_date/Building {building_number}/main')
+    file_list = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+    dfs = [pd.read_csv(join(folder_path, file_name)) for file_name in file_list]
+    merged_df = pd.concat(dfs, ignore_index=True)
+    
+    # Check if merged DataFrame has the correct number of rows
+    total_rows = sum([df.shape[0] for df in dfs])
+    assert merged_df.shape[0] == total_rows, f"Mismatch in number of rows for Building {building_number}"
+    print(f"Number of rows matches for Building {building_number}\n")
+    
+    # Check if timestamps are correctly converted to datetime and no rows are missing after resampling
+    merged_df['Timestamp'] = pd.to_datetime(merged_df['Timestamp'])
+    merged_df.set_index('Timestamp', inplace=True)
+    resampled_df = merged_df.asfreq('s').fillna(0)
+    
+    assert resampled_df.shape[0] == (resampled_df.index[-1] - resampled_df.index[0]).total_seconds() + 1, f"Missing rows after resampling for Building {building_number}"
+    print(f"No missing rows after resampling for Building {building_number}\n")
+
+@pytest.mark.parametrize("building_number", range(1, 8))
 def test_merge_main_and_appliance_files(building_number):
     def merge_main_and_appliance_files(main_csv_path, appliance_csv_path):
         main_df = pd.read_csv(main_csv_path)
@@ -31,6 +51,7 @@ def test_merge_main_and_appliance_files(building_number):
     expected_columns = ['Timestamp', 'Active (W)', 'Apparent (VA)', 'kettle', 'vacuum', 'water_heater', 'oven', 'fridge', 'washing_machine', 'dryer', 'aircond']
     missing_columns = [col for col in expected_columns if col not in merged_df.columns]
     assert not missing_columns, f"Missing columns: {missing_columns}"
+    print(f"No missing columns for Building {building_number}")
     
     # Check first row values
     first_row_main = main_df.iloc[0]
@@ -39,10 +60,12 @@ def test_merge_main_and_appliance_files(building_number):
     
     for column in main_df.columns:
         assert first_row_merged[column] == first_row_main[column], f"Mismatch in column {column} for first row in Building {building_number}."
+        print(f"Column {column} matches the first row value for Building {building_number}")
 
     for column in appliance_df.columns:
         if column != 'Timestamp':
             assert first_row_merged[column] == first_row_appliance[column], f"Mismatch in column {column} for first row in Building {building_number}."
+            print(f"Column {column} matches the first row value for Building {building_number}")
 
     # Check last row appliance values
     last_row_appliance = appliance_df.iloc[-1]
@@ -51,6 +74,7 @@ def test_merge_main_and_appliance_files(building_number):
     for column in appliance_df.columns:
         if column != 'Timestamp':
             assert last_row_merged[column] == last_row_appliance[column], f"Mismatch in column {column} for last row in Building {building_number}."
+            print(f"Column {column} matches the last row value for Building {building_number}")
 
 @pytest.mark.parametrize("sampling_period", ['3s', '6s', '30s'])
 def test_resample_csv(sampling_period):
@@ -108,9 +132,11 @@ def test_resample_csv(sampling_period):
     for column, expected_value in expected_row.items():
         # Check if the column is NaN
         assert pd.isna(resampled_df.iloc[0][column]) == pd.isna(expected_value), f"Column {column} NaN mismatch"
+        print(f"Column {column} NaN matches the expected value for sampling period {sampling_period}")
         # Check if the column average is approximately equal to the expected value
         if not pd.isna(expected_value):
             assert resampled_df.iloc[0][column] == pytest.approx(expected_value), f"Column {column} average mismatch"
+            print(f"Column {column} average matches the expected value for sampling period {sampling_period}")
     
 @pytest.mark.parametrize("input, expected", [
     # Valid timestamp
@@ -142,6 +168,7 @@ def test_resample_csv(sampling_period):
 ])
 def test_validate_timestamp(input, expected):
     assert validate_timestamp(input) == expected
+    print(f"Timestamp {input} is {'valid' if expected else 'invalid'}")
 
 def test_validate_h5_file():
     # Test the function with a valid HDF5 file
@@ -166,6 +193,7 @@ class StreamlitAppTests(BaseCase):
     def test_upload(self):
         # Wait for the HDF5 file validation message
         self.assert_text("HDF5 file validation passed", 'p:contains("HDF5 file validation passed")', timeout=10)
+        print("HDF5 file validation passed after upload")
 
     def test_generate_graphs(self):
         # Wait for the model to finish running
@@ -181,3 +209,4 @@ class StreamlitAppTests(BaseCase):
         
         # Check if the number of generated graphs is correct
         assert len(charts) == 2
+        print("Graphs are generated successfully")
