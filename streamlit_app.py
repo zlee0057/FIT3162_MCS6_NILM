@@ -3,7 +3,7 @@ import os
 from os.path import join
 import pickle
 import nilmtk as ntk
-from api import API
+from nilmtk.api import API
 from tempfile import NamedTemporaryFile
 from sklearn.cluster import KMeans
 import pandas as pd
@@ -18,26 +18,26 @@ def import_model(filename):
 # Pre-generate graphs for all appliances
 def pre_generate_graphs():
     for appliance in st.session_state.appliances:
-        chart_data = st.session_state.model.pred_overall['Seq2SPoint'][appliance]
+        chart_data = st.session_state.model.pred_overall['Seq2Seq'][appliance]
         X = chart_data.values.reshape(-1, 1)
         kmeans = KMeans(n_clusters=2)
         kmeans.fit(X)
         centroids = kmeans.cluster_centers_
         threshold = (centroids[0][0] + centroids[1][0]) / 2
-        st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'] = 0
-        window_size = 99
-        for k in range(0, len(st.session_state.model.pred_overall['Seq2SPoint']), window_size - 1):
-            if st.session_state.model.pred_overall['Seq2SPoint'][appliance].iloc[k] > threshold:
-                st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'].iloc[k:k + window_size] = 1
+        st.session_state.model.pred_overall['Seq2Seq'][appliance + ' ON/OFF states'] = 0
+        window_size = 2999
+        for k in range(0, len(st.session_state.model.pred_overall['Seq2Seq']), window_size - 1):
+            if st.session_state.model.pred_overall['Seq2Seq'][appliance].iloc[k] > threshold:
+                st.session_state.model.pred_overall['Seq2Seq'][appliance + ' ON/OFF states'].iloc[k:k + window_size] = 1
 
 # Display selected appliance information
 def display_appliance_info(appliance, start_time, end_time):
     st.subheader(appliance.capitalize() + " Usage with ON/OFF states")
-    chart_data = st.session_state.model.pred_overall['Seq2SPoint'][appliance].loc[start_time:end_time]
+    chart_data = st.session_state.model.pred_overall['Seq2Seq'][appliance].loc[start_time:end_time]
     chart_data.index = chart_data.index.strftime('%H:%M:%S')
     st.line_chart(chart_data)
     
-    on_off_chart = st.session_state.model.pred_overall['Seq2SPoint'][appliance + ' ON/OFF states'].loc[start_time:end_time]
+    on_off_chart = st.session_state.model.pred_overall['Seq2Seq'][appliance + ' ON/OFF states'].loc[start_time:end_time]
     on_off_chart.index = on_off_chart.index.strftime('%H:%M:%S')
     st.line_chart(on_off_chart)
 
@@ -138,7 +138,7 @@ def main():
                         st.session_state.loaded = True
                 
                 if st.session_state.dataframe is None and st.session_state.appliances is None:
-                    st.session_state.dataframe = st.session_state.model.pred_overall['Seq2SPoint'].copy()
+                    st.session_state.dataframe = st.session_state.model.pred_overall['Seq2Seq'].copy()
                     st.session_state.appliances = st.session_state.dataframe.columns.tolist()
                     # Pre-generate graphs for all appliances
                     pre_generate_graphs()
@@ -151,11 +151,11 @@ def main():
                 selected_appliance = st.sidebar.selectbox("Select Appliance", st.session_state.appliances)
 
                 st.sidebar.markdown("### Adjust Time Range")
-                start_header = "Start Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
-                start_time_input = st.sidebar.text_input(start_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
+                start_header = "Start Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
+                start_time_input = st.sidebar.text_input(start_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.min().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
                 
-                end_header = "End Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
-                end_time_input = st.sidebar.text_input(end_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
+                end_header = "End Time (Default: " + pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S') + ")"
+                end_time_input = st.sidebar.text_input(end_header, value=pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.max().timestamp()).strftime('%Y-%m-%d %H:%M:%S'))
 
                 # Validate start time input
                 if not validate_timestamp(start_time_input):
@@ -174,7 +174,7 @@ def main():
                     st.error("Error: Please select a valid time range. Start time cannot be greater than end time.")
                     return
                 
-                if start_time_readable < pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.min().timestamp()) or end_time_readable > pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2SPoint'].index.max().timestamp()):
+                if start_time_readable < pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.min().timestamp()) or end_time_readable > pd.Timestamp.fromtimestamp(st.session_state.model.pred_overall['Seq2Seq'].index.max().timestamp()):
                     st.error("Error: Please enter a valid time range that is within the default start and end time.")
                     return
 
